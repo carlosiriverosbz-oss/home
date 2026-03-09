@@ -5,13 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Carlos Riveros | Técnico Freelance Mobile</title>
   <meta name="description" content="Versión móvil tipo app de Carlos Riveros, técnico freelance en reparación de celulares." />
-  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <style>
     :root {
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --surface-2: #f1f3f7;
+      --line: rgba(17,17,17,0.08);
+      --text: #111111;
+      --text-soft: #555555;
+      --primary: #d61f26;
+      --primary-2: #ff4a51;
+      --success: #1c9c4f;
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 18px;
+      --shadow: 0 18px 40px rgba(0,0,0,0.10);
+    }
+
+    body.temaOscuro {
       --bg: #0f1115;
       --surface: #171a21;
       --surface-2: #1f2430;
@@ -21,9 +37,6 @@
       --primary: #e1252e;
       --primary-2: #ff4a51;
       --success: #2fca6b;
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 18px;
       --shadow: 0 18px 40px rgba(0,0,0,0.28);
     }
 
@@ -36,7 +49,7 @@
 
     html, body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #111318 0%, #0c0e13 100%);
+      background: var(--bg);
       color: var(--text);
       min-height: 100%;
     }
@@ -61,6 +74,25 @@
     img {
       display: block;
       max-width: 100%;
+    }
+
+    .app {
+      min-height: 100vh;
+      padding: 18px 16px 110px;
+      background: radial-gradient(circle at top left, rgba(214,31,38,0.08), transparent 28%), var(--bg);
+    }
+
+    .botonTema {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      cursor: pointer;
     }
 
     .app {
@@ -534,6 +566,9 @@
         <strong>Carlos Riveros</strong>
         <span>Técnico freelance en celulares</span>
       </div>
+      <button class="botonTema" id="botonTema" aria-label="Cambiar tema">
+        <span class="material-symbols-outlined" id="iconoTema">dark_mode</span>
+      </button>
       <a class="topAction" href="https://wa.me/595991555555" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
         <span class="material-symbols-outlined">chat</span>
       </a>
@@ -546,8 +581,8 @@
           <span class="material-symbols-outlined">verified</span>
           Hablar poco y hacer más
         </div>
-        <h1>Servicio técnico claro, directo y sin humo.</h1>
-        <p>Versión móvil tipo app para que tus clientes coticen, consulten estado y te escriban rápido por WhatsApp.</p>
+        <h1>Técnico freelance en celulares con un enfoque directo, honesto y real.</h1>
+        <p>Trabajo con calma, sin vender humo y sin prometer milagros. Analizo cada equipo dentro de mi alcance técnico y, cuando un caso requiere herramientas más avanzadas o procesos especializados, lo informo con claridad.</p>
         <div class="accionesHero">
           <a href="#formularios" class="botonPrimario">
             <span class="material-symbols-outlined">request_quote</span>
@@ -565,7 +600,7 @@
       <div class="cabeceraBloque">
         <div>
           <h2>Acerca de mí</h2>
-          <p>Perfil técnico personal</p>
+          <!--<p>Perfil técnico personal</p>-->
         </div>
       </div>
 
@@ -579,20 +614,21 @@
         </div>
       </div>
 
-      <p class="texto">Trabajo con calma, honestidad y soluciones reales. Si un trabajo está fuera de mi alcance técnico actual, lo informo con claridad y recomiendo otra opción responsable.</p>
+      <p class="texto">Soy técnico independiente en reparación de celulares. Mi método es simple: analizar cada equipo con calma, hablar claro con el cliente y buscar soluciones reales dentro de mi alcance técnico y de herramientas. Si no puedo hacer un trabajo, lo digo. Si requiere otro nivel de equipamiento o especialización, recomiendo a otro colega.</p>
 
       <div class="chips">
+        <div class="chip"><span class="material-symbols-outlined">psychology</span>Diagnóstico honesto</div>
         <div class="chip"><span class="material-symbols-outlined">pace</span>Lento pero seguro</div>
-        <div class="chip"><span class="material-symbols-outlined">inventory_2</span>Repuestos por pedido</div>
-        <div class="chip"><span class="material-symbols-outlined">rule</span>Sin promesas falsas</div>
+        <div class="chip"><span class="material-symbols-outlined">handyman</span>Sin humo</div>
+        <div class="chip"><span class="material-symbols-outlined">precision_manufacturing</span>Mejora continua</div>
       </div>
     </section>
 
     <section class="tarjeta" id="servicios">
       <div class="cabeceraBloque">
         <div>
-          <h2>Servicios</h2>
-          <p>Lo que sí realizo</p>
+          <h2>Servicios y alcance</h2>
+          <!--<p>La idea no es aparentar hacer de todo, sino mostrar bien lo que sí podés resolver y cómo trabajás cada caso.</p>-->
         </div>
       </div>
 
@@ -601,11 +637,11 @@
           <div class="icono"><span class="material-symbols-outlined">smartphone</span></div>
           <div>
             <h3>Cambios de módulos</h3>
-            <p>Pantalla, batería, puerto de carga y repuestos comunes según disponibilidad.</p>
+            <p>Pantalla, batería, puerto de carga, flex y componentes comunes según disponibilidad del repuesto.</p>
             <ul>
-              <li><span class="material-symbols-outlined">check_circle</span>Pantallas</li>
-              <li><span class="material-symbols-outlined">check_circle</span>Baterías</li>
-              <li><span class="material-symbols-outlined">check_circle</span>Puertos</li>
+              <li><span class="material-symbols-outlined">check_circle</span>Diagnóstico visual</li>
+              <li><span class="material-symbols-outlined">check_circle</span>Pruebas básicas</li>
+              <li><span class="material-symbols-outlined">check_circle</span>Instalación cuidadosa</li>
             </ul>
           </div>
         </article>
@@ -614,7 +650,7 @@
           <div class="icono"><span class="material-symbols-outlined">usb</span></div>
           <div>
             <h3>Problemas de carga</h3>
-            <p>Diagnóstico y solución de fallas comunes de carga dentro de reparación no avanzada.</p>
+            <p>Revisión de conectores, suciedad, flex, módulo o fallas típicas de carga dentro de reparación no avanzada.</p>
             <ul>
               <li><span class="material-symbols-outlined">check_circle</span>No carga</li>
               <li><span class="material-symbols-outlined">check_circle</span>Carga intermitente</li>
@@ -627,10 +663,10 @@
           <div class="icono"><span class="material-symbols-outlined">phonelink_setup</span></div>
           <div>
             <h3>Software común</h3>
-            <p>Errores típicos del sistema, reinicios, lentitud y problemas habituales del equipo.</p>
+            <p>Problemas típicos del sistema, bloqueo por patrón, errores de arranque y otros procesos dentro de software no extremo.</p>
             <ul>
-              <li><span class="material-symbols-outlined">check_circle</span>Sistema lento</li>
-              <li><span class="material-symbols-outlined">check_circle</span>Errores comunes</li>
+              <li><span class="material-symbols-outlined">check_circle</span>Equipo lento</li>
+              <li><span class="material-symbols-outlined">check_circle</span>Errores del sistema</li>
               <li><span class="material-symbols-outlined">check_circle</span>Recuperación básica</li>
             </ul>
           </div>
@@ -641,24 +677,25 @@
     <section class="tarjeta" id="proceso">
       <div class="cabeceraBloque">
         <div>
-          <h2>Proceso</h2>
-          <p>Simple y claro</p>
+          <h2>Proceso de trabajo</h2>
+          <!--<p>Un flujo simple y claro, muy parecido a cómo trabajan los freelancers profesionales, pero adaptado a servicio técnico de celulares.</p>-->
         </div>
       </div>
 
       <div class="pasos">
-        <article class="paso"><div class="pasoNumero">1</div><div><h3>Consulta</h3><p>El cliente explica la falla y el modelo del equipo.</p></div></article>
-        <article class="paso"><div class="pasoNumero">2</div><div><h3>Revisión</h3><p>Analizo si el caso entra en mi alcance técnico actual.</p></div></article>
-        <article class="paso"><div class="pasoNumero">3</div><div><h3>Cotización</h3><p>Se informa una estimación según trabajo y repuesto.</p></div></article>
-        <article class="paso"><div class="pasoNumero">4</div><div><h3>Seguimiento</h3><p>El cliente consulta por WhatsApp con su código.</p></div></article>
+        <article class="paso"><div class="pasoNumero">1</div><div><h3>Consulta inicial</h3><p>El cliente explica la falla, modelo del equipo y síntomas del problema.</p></div></article>
+        <article class="paso"><div class="pasoNumero">2</div><div><h3>Revisión del caso</h3><p>Analizo si la reparación entra en mi alcance técnico actual.</p></div></article>
+        <article class="paso"><div class="pasoNumero">3</div><div><h3>Cotización</h3><p>Se informa precio estimado según mano de obra, repuesto y disponibilidad.</p></div></article>
+        <article class="paso"><div class="pasoNumero">4</div><div><h3>Trabajo y prueba</h3><p>Se realiza el procedimiento con calma y luego se prueba el equipo.</p></div></article>
+        <article class="paso"><div class="pasoNumero">5</div><div><h3>Seguimiento</h3><p>El cliente puede consultar el estado de su reparación por código vía WhatsApp.</p></div></article>
       </div>
     </section>
 
     <section class="tarjeta" id="formularios">
       <div class="cabeceraBloque">
         <div>
-          <h2>Formularios</h2>
-          <p>Cotización y estado</p>
+          <h2>Formularios directos a WhatsApp</h2>
+          <!--<p>Uno para cotizar una reparación y otro para consultar el estado del trabajo mediante un código. Todo sin backend, usando JavaScript para abrir el mensaje listo en WhatsApp.</p>-->
         </div>
       </div>
 
@@ -675,13 +712,17 @@
           </div>
           <div class="fila2">
             <div>
-              <label for="marcaEquipo">Marca</label>
-              <input class="campo" id="marcaEquipo" type="text" placeholder="Samsung" required />
+              <label for="telefonoCliente">Teléfono</label>
+              <input class="campo" id="telefonoCliente" type="tel" placeholder="Tu número" required />
             </div>
             <div>
-              <label for="modeloEquipo">Modelo</label>
-              <input class="campo" id="modeloEquipo" type="text" placeholder="A12" required />
+              <label for="marcaEquipo">Marca</label>
+              <input class="campo" id="marcaEquipo" type="text" placeholder="Samsung, Xiaomi, Motorola..." required />
             </div>
+          </div>
+          <div>
+            <label for="modeloEquipo">Modelo</label>
+            <input class="campo" id="modeloEquipo" type="text" placeholder="Ej: Redmi Note 8" required />
           </div>
           <div>
             <label for="tipoProblema">Tipo de problema</label>
@@ -695,8 +736,22 @@
             </select>
           </div>
           <div>
-            <label for="descripcionFalla">Descripción</label>
-            <textarea class="textarea" id="descripcionFalla" placeholder="Contame qué le pasa al equipo" required></textarea>
+            <label for="tipoRepuesto">Tipo de repuesto deseado</label>
+            <select class="select" id="tipoRepuesto">
+              <option value="No definido">No definido</option>
+              <option>Original</option>
+              <option>Calidad original</option>
+              <option>Genérico</option>
+              <option>El más conveniente según presupuesto</option>
+            </select>
+          </div>
+          <div>
+            <label for="descripcionFalla">Descripción de la falla</label>
+            <textarea class="textarea" id="descripcionFalla" placeholder="Contame qué le pasa al equipo, si se cayó, si moja, si carga lento, si se reinicia, etc." required></textarea>
+          </div>
+          <div>
+            <label for="presupuestoAproximado">Presupuesto aproximado</label>
+            <input class="campo" id="presupuestoAproximado" type="text" placeholder="Ej: ver opciones económicas / calidad original" />
           </div>
           <button type="submit" class="botonPrimario">
             <span class="material-symbols-outlined">send</span>
@@ -762,6 +817,34 @@
   </nav>
 
   <script>
+    if (!/Android|iPhone|iPad|iPod|Mobile|Opera Mini|IEMobile/i.test(navigator.userAgent)) {
+      //window.location.href = '../desktop/index.html';
+    }
+
+    const botonTema = document.getElementById('botonTema');
+    const iconoTema = document.getElementById('iconoTema');
+    const claveTema = 'temaPaginaTecnicoMobile';
+
+    function aplicarTema(tema) {
+      if (tema === 'oscuro') {
+        document.body.classList.add('temaOscuro');
+        iconoTema.textContent = 'light_mode';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#111111');
+      } else {
+        document.body.classList.remove('temaOscuro');
+        iconoTema.textContent = 'dark_mode';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+      }
+    }
+
+    aplicarTema(localStorage.getItem(claveTema) || 'claro');
+
+    botonTema.addEventListener('click', () => {
+      const nuevoTema = document.body.classList.contains('temaOscuro') ? 'claro' : 'oscuro';
+      localStorage.setItem(claveTema, nuevoTema);
+      aplicarTema(nuevoTema);
+    });
+
     const tabs = document.querySelectorAll('.tab');
     const panelCotizacion = document.getElementById('panelCotizacion');
     const panelEstado = document.getElementById('panelEstado');
@@ -790,24 +873,41 @@
     document.getElementById('formularioCotizacion').addEventListener('submit', function (evento) {
       evento.preventDefault();
       const nombre = document.getElementById('nombreCliente').value.trim();
+      const telefono = document.getElementById('telefonoCliente').value.trim();
       const marca = document.getElementById('marcaEquipo').value.trim();
       const modelo = document.getElementById('modeloEquipo').value.trim();
       const tipo = document.getElementById('tipoProblema').value.trim();
+      const repuesto = document.getElementById('tipoRepuesto').value.trim();
       const descripcion = document.getElementById('descripcionFalla').value.trim();
+      const presupuesto = document.getElementById('presupuestoAproximado').value.trim() || 'No especificado';
       const mensajeCotizacion = document.getElementById('mensajeCotizacion');
 
-      if (!nombre || !marca || !modelo || !tipo || !descripcion) {
+      if (!nombre || !telefono || !marca || !modelo || !tipo || !descripcion) {
         mostrarMensaje(mensajeCotizacion, 'Completá todos los campos obligatorios.', 'error');
         return;
       }
 
       const mensaje =
-        `Hola Carlos, quiero cotizar una reparación.\n\n` +
-        `Nombre: ${nombre}\n` +
-        `Marca: ${marca}\n` +
-        `Modelo: ${modelo}\n` +
-        `Tipo de problema: ${tipo}\n\n` +
-        `Descripción:\n${descripcion}`;
+        `Hola Carlos, quiero cotizar una reparación.
+
+` +
+        `Nombre: ${nombre}
+` +
+        `Teléfono: ${telefono}
+` +
+        `Marca: ${marca}
+` +
+        `Modelo: ${modelo}
+` +
+        `Tipo de problema: ${tipo}
+` +
+        `Tipo de repuesto: ${repuesto}
+` +
+        `Presupuesto aproximado: ${presupuesto}
+
+` +
+        `Descripción de la falla:
+${descripcion}`;
 
       mostrarMensaje(mensajeCotizacion, 'Abriendo WhatsApp con tu cotización...', 'ok');
       abrirWhatsApp(mensaje);
@@ -853,4 +953,3 @@
   </script>
 </body>
 </html>
-<
